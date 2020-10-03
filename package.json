@@ -1,0 +1,11 @@
+{
+  "name": "react-native-confirm-dialog",
+  "version": "1.0.0",
+  "description": "Custom confirmation and alert dialogs for react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Alon Dahari",
+  "license": "ISC"
+}
