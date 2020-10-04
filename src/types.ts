@@ -4,11 +4,16 @@ export interface ConfirmConfig {
   title?: string;
   subtitle?: string;
   body?: string;
+
   showCancel?: boolean;
   cancelLabel?: string;
   confirmLabel?: string;
-  buttons?: JSX.Element[];
+
+  // Callback for confirm action
   onConfirm?: VoidFunction;
+
+  // Supply a custom component for the buttons of the dialog, overrides defaults,
+  // including the buttons actions, loading states, etc.
   actions?: (dismiss: VoidFunction) => JSX.Element | JSX.Element[];
 }
 
