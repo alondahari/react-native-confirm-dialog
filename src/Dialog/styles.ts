@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import theme from '../theme'
+import { Theme } from '../types'
 
-const styles = StyleSheet.create({
+const getStyles = (theme: Theme) => StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: 'center',
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default styles
+export default getStyles

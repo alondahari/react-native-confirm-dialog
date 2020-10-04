@@ -4,8 +4,10 @@ import {
   Text,
   View,
 } from 'react-native'
-import React from 'react'
-import styles from './styles'
+import React, { useContext } from 'react'
+import getStyles from './styles'
+import { ConfirmContext } from '../ConfirmProvider'
+import { CurrentConfirm } from '../types'
 
 interface Props {
   title: string;
@@ -24,6 +26,9 @@ const Index = ({
   children,
   dismiss,
 }: Props): JSX.Element => {
+  const { theme } = useContext<CurrentConfirm>(ConfirmContext)
+  const styles = getStyles(theme)
+
   return (
     <Modal
       visible={ open }
