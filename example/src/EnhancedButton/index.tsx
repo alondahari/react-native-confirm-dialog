@@ -13,8 +13,8 @@ import getStyles from './styles'
 export interface Props {
   children: string;
   onPress?: VoidFunction;
-  style?: ViewStyle;
-  labelStyle?: TextStyle | TextStyle[];
+  style?: (ViewStyle | undefined)[];
+  labelStyle?: TextStyle;
   loading?: boolean;
   inverse?: boolean;
 }
@@ -23,7 +23,7 @@ const EnhancedButton = (
   { children, onPress, style, labelStyle, inverse, loading }: Props
 ): JSX.Element => {
   const {
-    theme, confirmButtonStyle, confirmButtonLabelStyle
+    theme, buttonStyle, buttonLabelStyle,
   } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
@@ -34,7 +34,7 @@ const EnhancedButton = (
           styles.button,
           inverse && styles.inverse,
           style,
-          confirmButtonStyle
+          buttonStyle,
         ]
       }
       onPress={ onPress }
@@ -51,7 +51,7 @@ const EnhancedButton = (
           [styles.label,
             inverse && styles.inverseLabel,
             labelStyle,
-            confirmButtonLabelStyle
+            buttonLabelStyle
           ]
         }
       >

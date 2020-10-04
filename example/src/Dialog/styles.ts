@@ -18,9 +18,6 @@ const getStyles = (theme: Theme) => StyleSheet.create({
   title: {
     fontSize: 19,
   },
-  body: {
-    marginBottom: 8,
-  },
   subtitle: {
     paddingTop: 4,
     opacity: 0.8,

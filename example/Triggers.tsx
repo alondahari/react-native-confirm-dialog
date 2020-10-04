@@ -40,11 +40,25 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
     })
   }
 
+  const handleCustomStyle = () => {
+    confirm({
+      body: 'This cannot be undone.',
+      buttonStyle: {
+        borderRadius: 30,
+        paddingVertical: 8,
+      },
+      confirmButtonLabelStyle: {
+        fontWeight: 'bold',
+      }
+    })
+  }
+
   return (
     <>
       <Button onPress={ handleBasicConfirm } title='Basic Confirm' />
       <Button onPress={ handleAsyncConfirm } title='Async Confirm' />
       <Button onPress={ handleAlert } title='Alert' />
+      <Button onPress={ handleCustomStyle } title='Custom Styles' />
     </>
   )
 }

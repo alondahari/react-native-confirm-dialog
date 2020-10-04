@@ -16,13 +16,13 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
   const [loading, setLoading] = useState(false)
 
   const {
-    cancelLabel, confirmLabel, onConfirm, showCancel
+    cancelLabel, confirmLabel, onConfirm, showCancel, cancelButtonStyle, cancelButtonLabelStyle, confirmButtonStyle, confirmButtonLabelStyle
   } = useContext<CurrentConfirm>(ConfirmContext)
 
   const handleConfirm = async(): Promise<void> => {
     setLoading(true)
     try {
-      onConfirm && await onConfirm()
+      await onConfirm()
       dismiss()
     } finally {
       setLoading(false)
@@ -34,7 +34,8 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
         showCancel &&
         <EnhancedButton
           onPress={ dismiss }
-          style={ styles.cancel }
+          style={ [styles.cancel, cancelButtonStyle] }
+          labelStyle={ cancelButtonLabelStyle }
           inverse
         >
           { cancelLabel }
@@ -43,7 +44,8 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
       <EnhancedButton
         loading={ loading }
         onPress={ handleConfirm }
-        style={ styles.confirm }
+        style={ [styles.confirm, confirmButtonStyle] }
+        labelStyle={ confirmButtonLabelStyle }
       >
         { confirmLabel }
       </EnhancedButton>

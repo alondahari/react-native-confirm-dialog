@@ -16,8 +16,17 @@ interface Options {
   // including the buttons actions, loading states, etc.
   actions?: (dismiss: VoidFunction) => JSX.Element | JSX.Element[];
 
+  // Buttons styling override
+  buttonStyle?: ViewStyle;
+  buttonLabelStyle?: TextStyle;
+
+  // Specific styling for the confirm button
   confirmButtonStyle?: ViewStyle;
   confirmButtonLabelStyle?: TextStyle;
+
+  // Specific styling for the cancel button
+  cancelButtonStyle?: ViewStyle;
+  cancelButtonLabelStyle?: TextStyle;
 }
 
 export interface ConfirmConfig extends Options {
@@ -46,7 +55,7 @@ export interface CurrentConfirm extends Options {
   confirmLabel: string;
 
   // Callback for confirm action
-  onConfirm?: VoidFunction;
+  onConfirm: VoidFunction;
 
   theme: Theme;
 }
