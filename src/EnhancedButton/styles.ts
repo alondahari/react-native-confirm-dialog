@@ -1,23 +1,24 @@
 import { StyleSheet } from 'react-native'
+import theme from '../theme'
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'rgba(0, 0, 255, 0.5)',
+    backgroundColor: theme.primaryColor,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
   },
   inverse: {
     backgroundColor: 'transparent',
-    borderColor: 'rgba(0, 0, 255, 0.5)',
+    borderColor: theme.primaryColor,
     borderWidth: 1,
   },
   label: {
-    paddingVertical: 8,
+    paddingVertical: theme.spacing,
     color: 'white',
   },
   inverseLabel: {
-    color: 'black'
+    color: theme.primaryColor,
   }
 })
 

@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native'
+import theme from '../theme'
 
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(20, 38, 62, 0.69);',
+    backgroundColor: theme.backshadowColor,
   },
   modalView: {
     backgroundColor: 'white',
