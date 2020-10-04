@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-  label: {
-    fontFamily: 'raleway-semi-bold',
-    fontSize: 10,
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  actions: { flexDirection: 'row', justifyContent: 'space-between' },
   cancel: {
     borderColor: 'black',
     flex: 1,

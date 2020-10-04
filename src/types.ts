@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export interface ConfirmConfig {
-  title: string;
+  title?: string;
   subtitle?: string;
   body?: string;
   showCancel?: boolean;

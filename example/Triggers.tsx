@@ -6,9 +6,7 @@ const Triggers = (): JSX.Element => {
   const confirm = useConfirm()
 
   const handlePress = () => {
-    confirm({
-      title: 'Are you sure?',
-    })
+    confirm()
   }
 
   return (

@@ -67,7 +67,7 @@ const ConfirmProvider = ({ children }: Props): JSX.Element => {
       {children}
       <Dialog
         open={ open }
-        title={ title }
+        title={ title as string }
         subtitle={ subtitle }
         message={ body }
         dismiss={ dismiss }

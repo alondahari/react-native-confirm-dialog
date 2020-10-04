@@ -17,13 +17,12 @@ const Actions = ({ dismiss, loading, cancelLabel, confirmLabel, handleConfirm }:
       <EnhancedButton
         onPress={ dismiss }
         style={ styles.cancel }
-        labelStyle={ [ styles.label, styles.blackLabel ] }
+        inverse
       >
         { cancelLabel }
       </EnhancedButton>
       <EnhancedButton
         loading={ loading }
-        labelStyle={ styles.label }
         onPress={ handleConfirm }
         style={ styles.confirm }
       >
