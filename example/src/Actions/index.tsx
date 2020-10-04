@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { View } from 'react-native'
 import EnhancedButton from '../EnhancedButton'
-import styles from './styles'
+import getStyles from './styles'
 import { ConfirmContext } from '../context'
 import { CurrentConfirm } from '../types'
 
@@ -10,6 +10,9 @@ export interface Props {
 }
 
 const Actions = ({ dismiss }: Props): JSX.Element => {
+  const { theme } = useContext<CurrentConfirm>(ConfirmContext)
+  const styles = getStyles(theme)
+
   const [loading, setLoading] = useState(false)
 
   const { cancelLabel, confirmLabel, onConfirm, showCancel } = useContext<CurrentConfirm>(ConfirmContext)

@@ -1,15 +1,16 @@
 import { StyleSheet } from 'react-native'
+import { Theme } from '../types'
 
-const styles = StyleSheet.create({
+const getStyles = ({ spacing }: Theme) => StyleSheet.create({
   actions: {
-    paddingTop: 16,
+    paddingTop: spacing * 2,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   cancel: {
     borderColor: 'black',
     flex: 1,
-    marginRight: 8,
+    marginRight: spacing,
   },
   confirm: {
     flex: 2,
@@ -19,4 +20,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default styles
+export default getStyles
