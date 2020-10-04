@@ -18,7 +18,7 @@ const Index = ({
   children,
   dismiss,
 }: Props): JSX.Element => {
-  const { theme, open, title, subtitle, body } = useContext<CurrentConfirm>(ConfirmContext)
+  const { theme, open, title, subtitle, body, titleStyle, subtitleStyle, bodyStyle } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
   return (
@@ -32,13 +32,11 @@ const Index = ({
         <View style={ styles.centeredView }>
           <TouchableWithoutFeedback>
             <View style={ styles.modalView }>
-              <Text style={ styles.title }>
+              <Text style={ [styles.title, titleStyle] }>
                 {title}
               </Text>
-              <View style={ styles.body }>
-                {subtitle && <Text style={ styles.subtitle }>{subtitle}</Text>}
-                {body && <Text style={ styles.copy }>{body}</Text>}
-              </View>
+              {subtitle && <Text style={ [styles.subtitle, subtitleStyle] }>{subtitle}</Text>}
+              {body && <Text style={ [styles.body, bodyStyle] }>{body}</Text>}
               {children}
             </View>
           </TouchableWithoutFeedback>

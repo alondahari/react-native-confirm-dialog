@@ -27,6 +27,10 @@ interface Options {
   // Specific styling for the cancel button
   cancelButtonStyle?: ViewStyle;
   cancelButtonLabelStyle?: TextStyle;
+
+  titleStyle?: TextStyle;
+  subtitleStyle?: TextStyle;
+  bodyStyle?: TextStyle;
 }
 
 export interface ConfirmConfig extends Options {

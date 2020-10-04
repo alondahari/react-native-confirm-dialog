@@ -24,7 +24,7 @@ const getStyles = ({ spacing, backshadowColor }: Theme) => StyleSheet.create({
     fontWeight: '100',
     fontStyle: 'italic',
   },
-  copy: {
+  body: {
     paddingVertical: 16,
     fontSize: 13,
     marginBottom: - spacing,

@@ -22,7 +22,7 @@ export default function App() {
         </ConfirmProvider>
       </View>
       <View>
-        <Text>Global configurations override</Text>
+        <Text>Global configurations override (blue confirm button)</Text>
         <ConfirmProvider config={{ theme: { primaryColor: 'blue' } }}>
             <Triggers setFeedback={setFeedback} />
         </ConfirmProvider>

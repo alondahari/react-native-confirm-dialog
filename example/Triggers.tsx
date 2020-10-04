@@ -51,9 +51,15 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
       confirmButtonLabelStyle: {
         fontWeight: 'bold',
       },
+      titleStyle: {
+        fontSize: 22,
+      },
+      bodyStyle: {
+        color: 'red',
+      },
       theme: {
         spacing: 4,
-        backshadowColor: 'rgba(0, 0, 200, 0.4)'
+        backshadowColor: 'rgba(0, 0, 100, 0.4)'
       }
     })
   }
