@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
     "baseUrl": ".",
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
@@ -12,6 +13,7 @@
     },
     "declaration": true,
     "outDir": "dist",
+    "esModuleInterop": true,
     "resolveJsonModule": true
   },
   "include": ["src"],
