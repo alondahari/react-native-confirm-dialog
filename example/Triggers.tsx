@@ -1,9 +1,14 @@
 import React from 'react'
 import { Button } from 'react-native'
+import { useConfirm } from 'react-native-confirm-dialog'
 
 const Triggers = (): JSX.Element => {
-  const handlePress = () => {
+  const confirm = useConfirm()
 
+  const handlePress = () => {
+    confirm({
+      title: 'Are you sure?',
+    })
   }
 
   return (
