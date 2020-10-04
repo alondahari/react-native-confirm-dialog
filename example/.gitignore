@@ -1,5 +1,4 @@
 node_modules/**/*
-yarn-error.log
 .expo/*
 npm-debug.*
 *.jks
@@ -9,11 +8,6 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-web-report/
-coverage/
 
 # macOS
 .DS_Store
-
-.idea
-dist

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Custom confirmation and alert dialogs for react native",
   "main": "index.js",
+  "files": ["dist/**/*"],
   "scripts": {
-    "test": "test",
     "build": "tsc"
   },
   "author": "Alon Dahari",
