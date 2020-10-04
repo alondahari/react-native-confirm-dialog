@@ -15,7 +15,9 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
 
   const [loading, setLoading] = useState(false)
 
-  const { cancelLabel, confirmLabel, onConfirm, showCancel } = useContext<CurrentConfirm>(ConfirmContext)
+  const {
+    cancelLabel, confirmLabel, onConfirm, showCancel
+  } = useContext<CurrentConfirm>(ConfirmContext)
 
   const handleConfirm = async(): Promise<void> => {
     setLoading(true)

@@ -19,14 +19,44 @@ export interface Props {
   inverse?: boolean;
 }
 
-const EnhancedButton = ({ children, onPress, style, labelStyle, inverse, loading }: Props): JSX.Element => {
-  const { theme } = useContext<CurrentConfirm>(ConfirmContext)
+const EnhancedButton = (
+  { children, onPress, style, labelStyle, inverse, loading }: Props
+): JSX.Element => {
+  const {
+    theme, confirmButtonStyle, confirmButtonLabelStyle
+  } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
   return (
-    <TouchableOpacity style={[styles.button, inverse && styles.inverse, style]} onPress={ onPress }>
-      { loading && <ActivityIndicator color={inverse ? 'black' : 'white'} style={styles.loadingIndicator }/> }
-      <Text style={ [styles.label, inverse && styles.inverseLabel, labelStyle] }>{children}</Text>
+    <TouchableOpacity
+      style={
+        [
+          styles.button,
+          inverse && styles.inverse,
+          style,
+          confirmButtonStyle
+        ]
+      }
+      onPress={ onPress }
+    >
+      {
+        loading &&
+        <ActivityIndicator
+          color={inverse ? 'black' : 'white'}
+          style={styles.loadingIndicator }
+        />
+      }
+      <Text
+        style={
+          [styles.label,
+            inverse && styles.inverseLabel,
+            labelStyle,
+            confirmButtonLabelStyle
+          ]
+        }
+      >
+        {children}
+      </Text>
     </TouchableOpacity>
   )
 }

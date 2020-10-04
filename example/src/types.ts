@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
+import { TextStyle, ViewStyle } from 'react-native'
 
 export interface Theme {
   spacing: number;
@@ -14,6 +15,9 @@ interface Options {
   // Supply a custom component for the buttons of the dialog, overrides defaults,
   // including the buttons actions, loading states, etc.
   actions?: (dismiss: VoidFunction) => JSX.Element | JSX.Element[];
+
+  confirmButtonStyle?: ViewStyle;
+  confirmButtonLabelStyle?: TextStyle;
 }
 
 export interface ConfirmConfig extends Options {
