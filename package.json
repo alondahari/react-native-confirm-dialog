@@ -2,10 +2,12 @@
   "name": "react-native-confirm-dialog",
   "version": "1.0.0",
   "description": "Custom confirmation and alert dialogs for react native",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": ["dist/**/*"],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "build"
   },
   "author": "Alon Dahari",
   "license": "ISC",
@@ -17,5 +19,20 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-native": "^0.63.3"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "confirm",
+    "dialog",
+    "alert",
+    "expo"
+  ],
 }
