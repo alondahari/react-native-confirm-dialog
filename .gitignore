@@ -17,3 +17,5 @@ coverage/
 
 .idea
 dist
+
+*.tgz

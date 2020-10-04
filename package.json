@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "build"
+    "prepare": "yarn build"
   },
   "author": "Alon Dahari",
   "license": "ISC",
