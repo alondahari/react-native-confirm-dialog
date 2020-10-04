@@ -36,7 +36,7 @@ const Index = ({
                 {title}
               </Text>
               <View style={ styles.body }>
-                {subtitle && <Text style={ styles.copy }>{subtitle}</Text>}
+                {subtitle && <Text style={ styles.subtitle }>{subtitle}</Text>}
                 {body && <Text style={ styles.copy }>{body}</Text>}
               </View>
               {children}

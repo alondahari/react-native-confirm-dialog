@@ -17,13 +17,19 @@ const getStyles = (theme: Theme) => StyleSheet.create({
   },
   title: {
     fontSize: 19,
-    paddingBottom: 16,
   },
   body: {
     marginBottom: 8,
   },
+  subtitle: {
+    paddingTop: 4,
+    opacity: 0.8,
+    color: 'grey',
+    fontWeight: '100',
+    fontStyle: 'italic',
+  },
   copy: {
-    paddingBottom: 16,
+    paddingVertical: 16,
     fontSize: 13,
   },
 })
