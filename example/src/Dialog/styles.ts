@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
 import { Theme } from '../types'
 
-const getStyles = (theme: Theme) => StyleSheet.create({
+const getStyles = ({ spacing, backshadowColor }: Theme) => StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.backshadowColor,
+    backgroundColor: backshadowColor,
   },
   modalView: {
     backgroundColor: 'white',
@@ -19,7 +19,6 @@ const getStyles = (theme: Theme) => StyleSheet.create({
     fontSize: 19,
   },
   subtitle: {
-    paddingTop: 4,
     opacity: 0.8,
     color: 'grey',
     fontWeight: '100',
@@ -28,6 +27,7 @@ const getStyles = (theme: Theme) => StyleSheet.create({
   copy: {
     paddingVertical: 16,
     fontSize: 13,
+    marginBottom: - spacing,
   },
 })
 

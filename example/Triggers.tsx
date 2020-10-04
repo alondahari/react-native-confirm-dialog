@@ -26,7 +26,8 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
 
   const handleAsyncConfirm = () => {
     confirm({
-      onConfirm: handleConfirm(1000)
+      onConfirm: handleConfirm(1000),
+      body: 'This might take a second',
     })
   }
 

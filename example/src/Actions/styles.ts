@@ -3,7 +3,7 @@ import { Theme } from '../types'
 
 const getStyles = ({ spacing }: Theme) => StyleSheet.create({
   actions: {
-    paddingTop: spacing * 2,
+    marginTop: spacing * 2,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
