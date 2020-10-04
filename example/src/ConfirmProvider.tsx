@@ -17,7 +17,7 @@ const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
   const [current, setCurrent] = useState<Omit<CurrentConfirm, 'setCurrent'>>(
     initial,
   )
-  console.log(current)
+
   const [loading, setLoading] = useState(false)
 
   const {

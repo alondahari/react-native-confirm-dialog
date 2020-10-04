@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Button } from 'react-native'
 import { useConfirm } from './src'
 
-const Triggers = (): JSX.Element => {
+interface Props {
+  setFeedback: Dispatch<SetStateAction<string>>;
+}
+
+const Triggers = ({setFeedback}: Props): JSX.Element => {
   const confirm = useConfirm()
 
+  const handleConfirm = () => {
+    setFeedback('Confirmed!')
+  }
+
   const handlePress = () => {
-    confirm()
+    confirm({
+      onConfirm: handleConfirm
+    })
   }
 
   return (
-    <Button onPress={ handlePress } title='Open Confirm' />
+    <Button onPress={ handlePress } title='Basic Confirm' />
   )
 }
 
