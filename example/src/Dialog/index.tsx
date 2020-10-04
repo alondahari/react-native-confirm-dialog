@@ -6,8 +6,8 @@ import {
 } from 'react-native'
 import React, { useContext } from 'react'
 import getStyles from './styles'
-import { ConfirmContext } from '../ConfirmProvider'
 import { CurrentConfirm } from '../types'
+import { ConfirmContext } from '../context'
 
 interface Props {
   title: string;

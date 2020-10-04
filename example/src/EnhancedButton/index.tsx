@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native'
-import { ConfirmContext } from '../ConfirmProvider'
+import { ConfirmContext } from '../context'
 import { CurrentConfirm } from '../types'
 import getStyles from './styles'
 

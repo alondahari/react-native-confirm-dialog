@@ -18,7 +18,7 @@ const getStyles = (theme: Theme) => StyleSheet.create({
     color: 'white',
   },
   inverseLabel: {
-    color: theme.primaryColor,
+    color: 'black',
   }
 })
 

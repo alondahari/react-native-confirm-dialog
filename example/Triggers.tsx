@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-native'
-import { useConfirm } from 'react-native-confirm-dialog'
+import { useConfirm } from './src'
 
 const Triggers = (): JSX.Element => {
   const confirm = useConfirm()

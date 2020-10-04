@@ -1,25 +1,20 @@
 import { ConfirmConfig, CurrentConfirm } from './types'
 import Dialog from './Dialog'
 import React, {
-  createContext,
   useState,
 } from 'react'
 import Actions, { Props as ActionProps } from './Actions'
 import defaults from './defaultConfigs'
+import { ConfirmContext } from './context'
 
 interface Props {
   children: JSX.Element;
-  config: Partial<ConfirmConfig>
+  config?: Partial<ConfirmConfig>
 }
-
-export const ConfirmContext = createContext<CurrentConfirm>({
-  ...defaults,
-  setCurrent: undefined,
-})
 
 const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
   const [current, setCurrent] = useState<Omit<CurrentConfirm, 'setCurrent'>>(
-    { ...defaults, ...config },
+    { ...defaults, ...config, theme: { ...defaults.theme, ...config?.theme } },
   )
   const [loading, setLoading] = useState(false)
 
@@ -48,8 +43,8 @@ const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
 
   const actionProps: ActionProps = {
     dismiss,
-    confirmLabel: confirmLabel as string,
-    cancelLabel: cancelLabel as string,
+    confirmLabel,
+    cancelLabel,
     handleConfirm,
     loading,
   }
