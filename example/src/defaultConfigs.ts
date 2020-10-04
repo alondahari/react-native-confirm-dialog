@@ -15,6 +15,7 @@ const defaults: Omit<CurrentConfirm, 'setCurrent'> = {
   confirmLabel: 'OK',
   onConfirm: noopFn,
   theme,
+  dismissOnOutsideClick: true,
 }
 
 export default defaults

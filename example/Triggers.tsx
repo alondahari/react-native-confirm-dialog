@@ -38,6 +38,7 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
       title: 'Pay attention!',
       subtitle: 'here it comes...',
       body: 'Consider yourself alerted!',
+      dismissOnOutsideClick: false,
     })
   }
 

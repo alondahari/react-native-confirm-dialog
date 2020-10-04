@@ -8,6 +8,7 @@ import React, { useContext } from 'react'
 import getStyles from './styles'
 import { CurrentConfirm } from '../types'
 import { ConfirmContext } from '../context'
+import { noopFn } from '../helpers'
 
 interface Props {
   children: JSX.Element | JSX.Element[];
@@ -18,7 +19,9 @@ const Index = ({
   children,
   dismiss,
 }: Props): JSX.Element => {
-  const { theme, open, title, subtitle, body, titleStyle, subtitleStyle, bodyStyle } = useContext<CurrentConfirm>(ConfirmContext)
+  const {
+    theme, open, title, subtitle, body, titleStyle, subtitleStyle, bodyStyle, dismissOnOutsideClick
+  } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
   return (
@@ -28,7 +31,7 @@ const Index = ({
       transparent
       presentationStyle='overFullScreen'
     >
-      <TouchableWithoutFeedback onPress={ dismiss }>
+      <TouchableWithoutFeedback onPress={ dismissOnOutsideClick ? dismiss : noopFn }>
         <View style={ styles.centeredView }>
           <TouchableWithoutFeedback>
             <View style={ styles.modalView }>

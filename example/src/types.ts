@@ -44,6 +44,8 @@ export interface ConfirmConfig extends Options {
   onConfirm?: VoidFunction;
 
   theme?: Partial<Theme>;
+
+  dismissOnOutsideClick?: boolean;
 }
 
 export interface CurrentConfirm extends Options {
@@ -62,4 +64,6 @@ export interface CurrentConfirm extends Options {
   onConfirm: VoidFunction;
 
   theme: Theme;
+
+  dismissOnOutsideClick: boolean;
 }
