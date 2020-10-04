@@ -18,9 +18,7 @@ const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
     initial,
   )
 
-  const {
-    actions,
-  } = current
+  const { actions } = current
 
   const dismiss = (): void => setCurrent(initial)
 

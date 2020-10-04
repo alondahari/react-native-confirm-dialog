@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   actions: {
+    paddingTop: 16,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
