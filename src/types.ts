@@ -1,5 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
 
+export interface Theme {
+  spacing: number;
+  primaryColor: string;
+  backshadowColor: string;
+}
+
 export interface ConfirmConfig {
   title?: string;
   subtitle?: string;
@@ -19,6 +25,7 @@ export interface ConfirmConfig {
 
 export interface CurrentConfirm extends ConfirmConfig {
   open: boolean;
+  theme: Theme;
   setCurrent:
   | Dispatch<SetStateAction<Omit<CurrentConfirm, 'setCurrent'>>>
   | undefined;

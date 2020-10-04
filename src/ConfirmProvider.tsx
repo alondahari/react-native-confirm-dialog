@@ -1,4 +1,4 @@
-import { CurrentConfirm } from './types'
+import { ConfirmConfig, CurrentConfirm } from './types'
 import Dialog from './Dialog'
 import React, {
   createContext,
@@ -9,6 +9,7 @@ import defaults from './defaultConfigs'
 
 interface Props {
   children: JSX.Element;
+  config: Partial<ConfirmConfig>
 }
 
 export const ConfirmContext = createContext<CurrentConfirm>({
@@ -16,9 +17,9 @@ export const ConfirmContext = createContext<CurrentConfirm>({
   setCurrent: undefined,
 })
 
-const ConfirmProvider = ({ children }: Props): JSX.Element => {
+const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
   const [current, setCurrent] = useState<Omit<CurrentConfirm, 'setCurrent'>>(
-    defaults
+    { ...defaults, ...config },
   )
   const [loading, setLoading] = useState(false)
 
