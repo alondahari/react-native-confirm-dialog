@@ -1,23 +1,14 @@
 import { CurrentConfirm } from './types'
-import { noopFn } from './helpers'
 import Dialog from './Dialog'
 import React, {
   createContext,
   useState,
 } from 'react'
 import Actions, { Props as ActionProps } from './Actions'
+import defaults from './defaultConfigs'
 
 interface Props {
   children: JSX.Element;
-}
-
-const defaults: Omit<CurrentConfirm, 'setCurrent'> = {
-  open: false,
-  title: 'Are you sure?',
-  showCancel: true,
-  cancelLabel: 'Cancel',
-  confirmLabel: 'OK',
-  onConfirm: noopFn,
 }
 
 export const ConfirmContext = createContext<CurrentConfirm>({
