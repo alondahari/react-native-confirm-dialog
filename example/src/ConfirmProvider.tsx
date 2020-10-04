@@ -3,7 +3,7 @@ import Dialog from './Dialog'
 import React, {
   useState,
 } from 'react'
-import Actions, { Props as ActionProps } from './Actions'
+import Actions from './Actions'
 import defaults from './defaultConfigs'
 import { ConfirmContext } from './context'
 
@@ -18,41 +18,18 @@ const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
     initial,
   )
 
-  const [loading, setLoading] = useState(false)
-
   const {
-    confirmLabel,
-    onConfirm,
-    cancelLabel,
     actions,
   } = current
 
   const dismiss = (): void => setCurrent(initial)
-
-  const handleConfirm = async(): Promise<void> => {
-    setLoading(true)
-    try {
-      onConfirm && await onConfirm()
-      dismiss()
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const actionProps: ActionProps = {
-    dismiss,
-    confirmLabel,
-    cancelLabel,
-    handleConfirm,
-    loading,
-  }
 
   return (
     <ConfirmContext.Provider value={ { ...current, setCurrent } }>
       {children}
       <Dialog dismiss={dismiss}>
         {
-          actions ? actions(dismiss) : <Actions { ...actionProps } />
+          actions ? actions(dismiss) : <Actions dismiss={ dismiss } />
         }
       </Dialog>
     </ConfirmContext.Provider>

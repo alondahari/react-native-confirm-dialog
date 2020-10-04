@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   cancel: {
     borderColor: 'black',
     flex: 1,
+    marginRight: 8,
   },
   confirm: {
     flex: 2,
-    marginLeft: 8,
   },
   blackLabel: {
     color: 'black',

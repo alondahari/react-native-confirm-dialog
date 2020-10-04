@@ -30,10 +30,21 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
     })
   }
 
+  const handleAlert = () => {
+    confirm({
+      showCancel: false,
+      confirmLabel: 'Got it',
+      title: 'Pay attention!',
+      subtitle: 'here it comes...',
+      body: 'Consider yourself alerted!',
+    })
+  }
+
   return (
     <>
       <Button onPress={ handleBasicConfirm } title='Basic Confirm' />
       <Button onPress={ handleAsyncConfirm } title='Async Confirm' />
+      <Button onPress={ handleAlert } title='Alert' />
     </>
   )
 }

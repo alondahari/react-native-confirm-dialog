@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { View } from 'react-native'
 import EnhancedButton from '../EnhancedButton'
 import styles from './styles'
+import { ConfirmContext } from '../context'
+import { CurrentConfirm } from '../types'
 
 export interface Props {
   dismiss: VoidFunction;
-  cancelLabel: string;
-  loading: boolean;
-  handleConfirm: VoidFunction;
-  confirmLabel: string;
 }
 
-const Actions = ({ dismiss, loading, cancelLabel, confirmLabel, handleConfirm }: Props): JSX.Element => {
+const Actions = ({ dismiss }: Props): JSX.Element => {
+  const [loading, setLoading] = useState(false)
+
+  const { cancelLabel, confirmLabel, onConfirm, showCancel } = useContext<CurrentConfirm>(ConfirmContext)
+
+  const handleConfirm = async(): Promise<void> => {
+    setLoading(true)
+    try {
+      onConfirm && await onConfirm()
+      dismiss()
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <View style={ styles.actions }>
-      <EnhancedButton
-        onPress={ dismiss }
-        style={ styles.cancel }
-        inverse
-      >
-        { cancelLabel }
-      </EnhancedButton>
+      {
+        showCancel &&
+        <EnhancedButton
+          onPress={ dismiss }
+          style={ styles.cancel }
+          inverse
+        >
+          { cancelLabel }
+        </EnhancedButton>
+      }
       <EnhancedButton
         loading={ loading }
         onPress={ handleConfirm }
