@@ -1,6 +1,6 @@
 {
   "name": "react-native-confirm-dialog",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Custom confirmation and alert dialogs for react native",
   "main": "dist/index.js",
   "files": [
