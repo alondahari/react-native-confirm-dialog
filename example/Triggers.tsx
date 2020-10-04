@@ -9,18 +9,32 @@ interface Props {
 const Triggers = ({setFeedback}: Props): JSX.Element => {
   const confirm = useConfirm()
 
-  const handleConfirm = () => {
-    setFeedback('Confirmed!')
+  const handleConfirm = (sleepTime = 0) => () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve()
+        setFeedback('Confirmed!')
+      }, sleepTime)
+    })
   }
 
-  const handlePress = () => {
+  const handleBasicConfirm = () => {
     confirm({
-      onConfirm: handleConfirm
+      onConfirm: handleConfirm()
+    })
+  }
+
+  const handleAsyncConfirm = () => {
+    confirm({
+      onConfirm: handleConfirm(1000)
     })
   }
 
   return (
-    <Button onPress={ handlePress } title='Basic Confirm' />
+    <>
+      <Button onPress={ handleBasicConfirm } title='Basic Confirm' />
+      <Button onPress={ handleAsyncConfirm } title='Async Confirm' />
+    </>
   )
 }
 

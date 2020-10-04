@@ -7,11 +7,15 @@ const getStyles = (theme: Theme) => StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
+    flexDirection: 'row',
   },
   inverse: {
     backgroundColor: 'transparent',
     borderColor: theme.primaryColor,
     borderWidth: 1,
+  },
+  loadingIndicator: {
+    marginRight: theme.spacing,
   },
   label: {
     paddingVertical: theme.spacing,
