@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Triggers from './Triggers'
-import { ConfirmProvider } from 'react-native-confirm-dialog'
+import ConfirmProvider from 'react-native-confirm-dialog/dist/ConfirmProvider'
 
 export default function App() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import EnhancedButton from 'EnhancedButton'
+import EnhancedButton from '../EnhancedButton'
 import styles from './styles'
 
 export interface Props {

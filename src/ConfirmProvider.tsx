@@ -1,11 +1,11 @@
-import { CurrentConfirm } from 'types'
-import { noopFn } from 'helpers'
+import { CurrentConfirm } from './types'
+import { noopFn } from './helpers'
 import Dialog from './Dialog'
 import React, {
   createContext,
   useState,
 } from 'react'
-import Actions, { Props as ActionProps } from 'Actions'
+import Actions, { Props as ActionProps } from './Actions'
 
 interface Props {
   children: JSX.Element;

@@ -1,8 +1,8 @@
 import {
   ConfirmConfig,
   CurrentConfirm,
-} from 'types'
-import { ConfirmContext } from 'ConfirmProvider'
+} from './types'
+import { ConfirmContext } from './ConfirmProvider'
 import { useContext } from 'react'
 
 type ConfirmHook = (config: ConfirmConfig) => void
