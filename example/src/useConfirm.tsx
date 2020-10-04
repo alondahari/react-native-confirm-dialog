@@ -14,8 +14,8 @@ const useConfirm = (): ConfirmHook => {
     setCurrent &&
       setCurrent({
         ...current,
-        open: true,
         ...config,
+        open: true,
         theme: {
           ...current.theme,
           ...config?.theme,

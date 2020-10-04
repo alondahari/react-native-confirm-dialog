@@ -13,23 +13,21 @@ interface Props {
 }
 
 const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
+  const initial = { ...defaults, ...config, theme: { ...defaults.theme, ...config?.theme } }
   const [current, setCurrent] = useState<Omit<CurrentConfirm, 'setCurrent'>>(
-    { ...defaults, ...config, theme: { ...defaults.theme, ...config?.theme } },
+    initial,
   )
+  console.log(current)
   const [loading, setLoading] = useState(false)
 
   const {
-    open,
-    title,
-    subtitle,
-    body,
     confirmLabel,
     onConfirm,
     cancelLabel,
     actions,
   } = current
 
-  const dismiss = (): void => setCurrent(defaults)
+  const dismiss = (): void => setCurrent(initial)
 
   const handleConfirm = async(): Promise<void> => {
     setLoading(true)
@@ -52,13 +50,7 @@ const ConfirmProvider = ({ children, config }: Props): JSX.Element => {
   return (
     <ConfirmContext.Provider value={ { ...current, setCurrent } }>
       {children}
-      <Dialog
-        open={ open }
-        title={ title as string }
-        subtitle={ subtitle }
-        message={ body }
-        dismiss={ dismiss }
-      >
+      <Dialog dismiss={dismiss}>
         {
           actions ? actions(dismiss) : <Actions { ...actionProps } />
         }

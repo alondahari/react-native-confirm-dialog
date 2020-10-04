@@ -10,23 +10,15 @@ import { CurrentConfirm } from '../types'
 import { ConfirmContext } from '../context'
 
 interface Props {
-  title: string;
-  subtitle?: string;
-  message?: string;
-  open: boolean;
   children: JSX.Element | JSX.Element[];
   dismiss: VoidFunction;
 }
 
 const Index = ({
-  title,
-  subtitle,
-  message,
-  open,
   children,
   dismiss,
 }: Props): JSX.Element => {
-  const { theme } = useContext<CurrentConfirm>(ConfirmContext)
+  const { theme, open, title, subtitle, body } = useContext<CurrentConfirm>(ConfirmContext)
   const styles = getStyles(theme)
 
   return (
@@ -45,7 +37,7 @@ const Index = ({
               </Text>
               <View style={ styles.body }>
                 {subtitle && <Text style={ styles.copy }>{subtitle}</Text>}
-                {message && <Text style={ styles.copy }>{message}</Text>}
+                {body && <Text style={ styles.copy }>{body}</Text>}
               </View>
               {children}
             </View>
