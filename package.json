@@ -6,6 +6,7 @@
   "files": [
     "dist/**/*"
   ],
+  "typings": "dist/index",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
