@@ -51,13 +51,42 @@ export default function App() {
 
 ```
 
-Check out the `example` folder for a full example
+Check out the `example` folder for a full example.
 
 ### Download & Installation
 
 ```shell 
 $ yarn add react-native-confirm-dialog
 ```
+
+### Configuration Options
+
+All of the configurations are optional with sensible defaults, and can be overriden
+when calling `confirm` or provided to `ConfirmProvider` as a `config` prop. Configuration
+options provided when calling `confirm` take precedence over options provided to `ConfirmProvider`
+
+| Name          | Description   | Type | Default  |
+| ------------- |---------------| ------|---|
+| title         | The title displayed in the confirm dialog | String | "Are you sure?" | 
+| subtitle      | Dimmed text right below the title      | String |  `undefined` |
+| body | Description of the confirmation      | String |   `undefined` |
+| showCancel | Set to default to hide the secondary button      |    Boolean | `true` |
+| cancelLabel | Text of the secondary button      | String |   "Cancel" |
+| confirmLabel | Text of the primary button      |  String |  "OK" |
+| actions | Override the dialog buttons with a custom component  |   
+ (dismiss: VoidFunction) => JSX.Element &#124; JSX.Element[]  | `undefined` |
+ | buttonStyle | Style overrides for both buttons |  ViewStyle |  `undefined` |
+| buttonLabelStyle | Style overrides for both button labels |  TextStyle |  `undefined` |
+| confirmButtonStyle | Style overrides for primary button |  ViewStyle |  `undefined` |
+| confirmButtonLabelStyle | Style overrides for primary button label |  TextStyle |  `undefined` |
+| cancelButtonStyle | Style overrides for secondary button |  ViewStyle |  `undefined` |
+| cancelButtonLabelStyle | Style overrides for secondary button label |  TextStyle |  `undefined` |
+| titleStyle | Style overrides for title |  TextStyle |  `undefined` |
+| subtitleStyle | Style overrides for subtitle |  TextStyle |  `undefined` |
+| bodyStyle | Style overrides for dialog body |  TextStyle |  `undefined` |
+| onConfirm | Callback action for primary button |  VoidFunction |  `() => {}` |
+| dismissOnOutsideClick | Should the dialog be dismissed on an outside click? |  Boolean |  `true` |
+| theme | Theme overrides |  Object |  (see Theme section)[] |
 
 ### Contributing
 
