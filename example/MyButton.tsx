@@ -1,11 +1,8 @@
 import React from 'react'
+import { EnhancedButtonProps } from 'react-native-confirm-dialog'
 import { Button } from 'react-native-paper'
 
-interface Props {
-  children: string;
-}
-
-const MyButton = ({ children, ...props }: Props): JSX.Element => {
+const MyButton = ({ children, ...props }: EnhancedButtonProps): JSX.Element => {
   return (
     <Button mode='text' {...props}>{children}</Button>
   )
