@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { View } from 'react-native'
-import EnhancedButton from '../EnhancedButton'
 import getStyles from './styles'
 import { ConfirmContext } from '../context'
 import { CurrentConfirm } from '../types'

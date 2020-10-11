@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { Button } from 'react-native'
 import { useConfirm } from 'react-native-confirm-dialog'
 import CustomActions from './CustomActions'
+import MyButton from './MyButton'
 
 interface Props {
   setFeedback: Dispatch<SetStateAction<string>>;
@@ -66,6 +67,13 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
     })
   }
 
+  const handleCustomButton = () => {
+    confirm({
+      ButtonComponent: MyButton,
+      onConfirm: handleConfirm(1000)
+    })
+  }
+
   const handleCustomActions = () => {
     confirm({
       actions: (dismiss) =>
@@ -84,6 +92,7 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
       <Button onPress={ handleAsyncConfirm } title='Async Confirm' />
       <Button onPress={ handleAlert } title='Alert' />
       <Button onPress={ handleCustomStyle } title='Custom Styles' />
+      <Button onPress={ handleCustomButton } title='Custom Button' />
       <Button onPress={ handleCustomActions } title='Custom Actions' />
     </>
   )
