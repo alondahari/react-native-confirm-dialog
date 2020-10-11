@@ -83,9 +83,19 @@ options provided when calling `confirm` take precedence over options provided to
 | showCancel              | Set to default to hide the secondary button         | Boolean                                                     | `true`                |
 | subtitle                | Dimmed text right below the title                   | String                                                      | `undefined`           |
 | subtitleStyle           | Style overrides for subtitle                        | TextStyle                                                   | `undefined`           |
-| theme                   | Theme overrides                                     | Object                                                      | (see Theme section)[] |
+| theme                   | Theme overrides                                     | Object                                                      | [see Theme section](#theme) |
 | title                   | The title displayed in the confirm dialog           | String                                                      | "Are you sure?"       |
 | titleStyle              | Style overrides for title                           | TextStyle                                                   | `undefined`           |
+
+#### Theme
+
+Control dialog look with a theme. Theme can be passed the same way as all the props above.
+
+| Name            | Description                        | Type   | Default                |
+|-----------------|------------------------------------|--------|------------------------|
+| spacing         | Spacing between elements base unit | number | 8                      |
+| primaryColor    | Color of primary elements          | string | "rgba(0, 0, 255, 0.5)" |
+| backshadowColor | Color of dialog's backdrop         | string | "rgba(0, 0, 0, 0.4)"   |
 
 
 ### Contributing
