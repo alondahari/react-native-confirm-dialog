@@ -2,68 +2,73 @@ import { Dispatch, SetStateAction } from 'react'
 import { TextStyle, ViewStyle } from 'react-native'
 
 export interface Theme {
-  spacing: number;
-  primaryColor: string;
   backshadowColor: string;
+  primaryColor: string;
+  spacing: number;
 }
 
 // Optional configs with no defaults
 interface Options {
-  subtitle?: string;
-  body?: string;
-
   // Supply a custom component for the buttons of the dialog, overrides defaults,
   // including the buttons actions, loading states, etc.
   actions?: (dismiss: VoidFunction) => JSX.Element | JSX.Element[];
+
+  body?: string;
+  bodyStyle?: TextStyle;
 
   // Buttons styling override
   buttonStyle?: ViewStyle;
   buttonLabelStyle?: TextStyle;
 
-  // Specific styling for the confirm button
-  confirmButtonStyle?: ViewStyle;
-  confirmButtonLabelStyle?: TextStyle;
-
   // Specific styling for the cancel button
   cancelButtonStyle?: ViewStyle;
   cancelButtonLabelStyle?: TextStyle;
 
-  titleStyle?: TextStyle;
+  // Specific styling for the confirm button
+  confirmButtonStyle?: ViewStyle;
+  confirmButtonLabelStyle?: TextStyle;
+
+  subtitle?: string;
   subtitleStyle?: TextStyle;
-  bodyStyle?: TextStyle;
+
+  titleStyle?: TextStyle;
 }
 
 export interface ConfirmConfig extends Options {
-  title?: string;
+  Button?: JSX.Element;
 
-  showCancel?: boolean;
   cancelLabel?: string;
   confirmLabel?: string;
+
+  dismissOnOutsideClick?: boolean;
 
   // Callback for confirm action
   onConfirm?: VoidFunction;
 
+  showCancel?: boolean;
+
   theme?: Partial<Theme>;
 
-  dismissOnOutsideClick?: boolean;
+  title?: string;
 }
 
 export interface CurrentConfirm extends Options {
+  cancelLabel: string;
+  confirmLabel: string;
+
+  dismissOnOutsideClick: boolean;
+
+  // Callback for confirm action
+  onConfirm: VoidFunction;
   open: boolean;
+
   setCurrent:
   | Dispatch<SetStateAction<Omit<CurrentConfirm, 'setCurrent'>>>
   | undefined;
 
-  title: string;
-
   showCancel: boolean;
-  cancelLabel: string;
-  confirmLabel: string;
-
-  // Callback for confirm action
-  onConfirm: VoidFunction;
 
   theme: Theme;
 
-  dismissOnOutsideClick: boolean;
+  title: string;
 }
