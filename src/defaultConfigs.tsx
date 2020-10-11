@@ -1,5 +1,6 @@
 import { noopFn } from './helpers'
 import { CurrentConfirm } from './types'
+import EnhancedButton from './EnhancedButton'
 
 const theme = {
   spacing: 8,
@@ -8,6 +9,7 @@ const theme = {
 }
 
 const defaults: Omit<CurrentConfirm, 'setCurrent'> = {
+  ButtonComponent: EnhancedButton,
   open: false,
   title: 'Are you sure?',
   showCancel: true,

@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { TextStyle, ViewStyle } from 'react-native'
+import { Props as EnhancedButtonProps } from './EnhancedButton'
 
 export interface Theme {
   backshadowColor: string;
@@ -17,6 +18,7 @@ interface Options {
   bodyStyle?: TextStyle;
 
   // Buttons styling override
+  buttonProps?: any;
   buttonStyle?: ViewStyle;
   buttonLabelStyle?: TextStyle;
 
@@ -35,7 +37,7 @@ interface Options {
 }
 
 export interface ConfirmConfig extends Options {
-  Button?: JSX.Element;
+  ButtonComponent?: FC<EnhancedButtonProps>;
 
   cancelLabel?: string;
   confirmLabel?: string;
@@ -53,6 +55,8 @@ export interface ConfirmConfig extends Options {
 }
 
 export interface CurrentConfirm extends Options {
+  ButtonComponent: FC<EnhancedButtonProps>;
+
   cancelLabel: string;
   confirmLabel: string;
 

@@ -16,7 +16,16 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
   const [loading, setLoading] = useState(false)
 
   const {
-    cancelLabel, confirmLabel, onConfirm, showCancel, cancelButtonStyle, cancelButtonLabelStyle, confirmButtonStyle, confirmButtonLabelStyle
+    cancelLabel,
+    confirmLabel,
+    onConfirm,
+    showCancel,
+    cancelButtonStyle,
+    cancelButtonLabelStyle,
+    confirmButtonStyle,
+    confirmButtonLabelStyle,
+    ButtonComponent,
+    buttonProps
   } = useContext<CurrentConfirm>(ConfirmContext)
 
   const handleConfirm = async(): Promise<void> => {
@@ -32,23 +41,25 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
     <View style={ styles.actions }>
       {
         showCancel &&
-        <EnhancedButton
+        <ButtonComponent
           onPress={ dismiss }
           style={ [styles.cancel, cancelButtonStyle] }
           labelStyle={ cancelButtonLabelStyle }
           inverse
+          {...buttonProps}
         >
           { cancelLabel }
-        </EnhancedButton>
+        </ButtonComponent>
       }
-      <EnhancedButton
+      <ButtonComponent
         loading={ loading }
         onPress={ handleConfirm }
         style={ [styles.confirm, confirmButtonStyle] }
         labelStyle={ confirmButtonLabelStyle }
+        {...buttonProps}
       >
         { confirmLabel }
-      </EnhancedButton>
+      </ButtonComponent>
     </View>
   )
 }
