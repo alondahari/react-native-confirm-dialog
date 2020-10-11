@@ -12,7 +12,7 @@
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
-    "react-native-confirm-dialog": "../react-native-confirm-dialog-0.0.6.tgz"
+    "react-native-confirm-dialog": "*"
   },
   "devDependencies": {
     "@types/react": "~16.9.35",

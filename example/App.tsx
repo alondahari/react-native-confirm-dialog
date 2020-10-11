@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Triggers from './Triggers'
-import { ConfirmProvider } from './src'
+import { ConfirmProvider } from 'react-native-confirm-dialog'
 
 export default function App() {
   const [feedback, setFeedback] = useState('')

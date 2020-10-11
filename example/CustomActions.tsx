@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import React, { useState } from 'react'
-import EnhancedButton from './src/EnhancedButton'
+import { EnhancedButton } from 'react-native-confirm-dialog'
 
 interface Props {
   onCompleted: VoidFunction;

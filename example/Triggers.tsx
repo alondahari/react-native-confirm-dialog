@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { Button } from 'react-native'
-import { useConfirm } from './src'
+import { useConfirm } from 'react-native-confirm-dialog'
 import CustomActions from './CustomActions'
 
 interface Props {
