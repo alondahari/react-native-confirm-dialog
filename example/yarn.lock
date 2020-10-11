@@ -4447,8 +4447,10 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-"react-native-confirm-dialog@file:..":
+react-native-confirm-dialog@^0.0.7:
   version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-confirm-dialog/-/react-native-confirm-dialog-0.0.7.tgz#39003605df8bbd83e29b36602dd1f081f7d9f981"
+  integrity sha512-YD1sNOEdNNzx4lm6fX7GJIO3UW+TRALSQF4fWSI9WxBavVTNFyw5Y2I9WdLiffPH8IBmhaX6pY5kKZf3Ii3Ldg==
   dependencies:
     react-native "^0.63.2"
 
