@@ -25,24 +25,33 @@ react-native / expo app.
 ### Basic Demo
 
 ```tsx
-import { ConfirmProvider } from 'react-native-confirm-dialog'
+import React from 'react';
+import { Button } from 'react-native'
+import { ConfirmProvider, useConfirm } from 'react-native-confirm-dialog'
 
-export default function App() {
+const ConfirmableButton = () => {
   const confirm = useConfirm()
   const handlePress = () => {
     confirm({
       // ...config options
     })
   }
+  
+  return <Button onPress={ handlePress } title='Confirm this!' />
+}
+
+export default function App() {
 
   return (
     <ConfirmProvider>
-        <Button onPress={ handlePress } title='Confirm this!' />
+        <ConfirmableButton />
     </ConfirmProvider>
   );
 }
 
 ```
+
+Check out the `example` folder for a full example
 
 ### Download & Installation
 
