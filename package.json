@@ -37,5 +37,13 @@
     "dialog",
     "alert",
     "expo"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jazzdragon/react-native-confirm-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jazzdragon/react-native-confirm-dialog/issues"
+  },
+  "homepage": "https://github.com/jazzdragon/react-native-confirm-dialog"
 }
