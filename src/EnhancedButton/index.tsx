@@ -14,7 +14,7 @@ export interface Props {
   children: string;
   onPress?: VoidFunction;
   style?: ViewStyle | (ViewStyle | undefined)[];
-  labelStyle?: TextStyle;
+  labelStyle?: TextStyle | (TextStyle | undefined)[];
   loading?: boolean;
   inverse?: boolean;
 }

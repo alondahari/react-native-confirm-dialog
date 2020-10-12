@@ -38,17 +38,18 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
       setLoading(false)
     }
   }
+
   return (
     <View style={ styles.actions }>
       {
         showCancel &&
         <ButtonComponent
           onPress={ dismiss }
-          style={ [styles.cancel, cancelButtonStyle] }
-          labelStyle={ cancelButtonLabelStyle }
           inverse
           {...buttonProps}
           {...cancelButtonProps}
+          style={ [styles.cancel, buttonProps?.style, cancelButtonProps?.style, cancelButtonStyle] }
+          labelStyle={ [buttonProps?.labelStyle, cancelButtonProps?.labelStyle, cancelButtonLabelStyle] }
         >
           { cancelLabel }
         </ButtonComponent>
@@ -56,10 +57,10 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
       <ButtonComponent
         loading={ loading }
         onPress={ handleConfirm }
-        style={ [styles.confirm, confirmButtonStyle] }
-        labelStyle={ confirmButtonLabelStyle }
         {...buttonProps}
         {...confirmButtonProps}
+        style={ [styles.confirm, buttonProps?.style, confirmButtonProps?.style, confirmButtonStyle] }
+        labelStyle={ [buttonProps?.labelStyle, confirmButtonProps?.labelStyle, confirmButtonLabelStyle] }
       >
         { confirmLabel }
       </ButtonComponent>

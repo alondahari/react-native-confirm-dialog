@@ -18,17 +18,17 @@ interface Options {
   bodyStyle?: TextStyle;
 
   // Buttons styling override
-  buttonProps?: object;
+  buttonProps?: any;
   buttonStyle?: ViewStyle;
   buttonLabelStyle?: TextStyle;
 
   // Specific styling for the cancel button
-  cancelButtonProps?: object;
+  cancelButtonProps?: any;
   cancelButtonStyle?: ViewStyle;
   cancelButtonLabelStyle?: TextStyle;
 
   // Specific styling for the confirm button
-  confirmButtonProps?: object;
+  confirmButtonProps?: any;
   confirmButtonStyle?: ViewStyle;
   confirmButtonLabelStyle?: TextStyle;
 
