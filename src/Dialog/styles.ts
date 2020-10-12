@@ -11,21 +11,21 @@ const getStyles = ({ spacing, backshadowColor }: Theme) => StyleSheet.create({
   modalView: {
     backgroundColor: 'white',
     borderRadius: 10,
-    paddingHorizontal: 36,
-    paddingVertical: 28,
+    paddingHorizontal: spacing * 4,
+    paddingVertical: spacing * 3,
     width: '95%',
   },
   title: {
     fontSize: 19,
   },
   subtitle: {
-    opacity: 0.8,
+    marginTop: spacing,
     color: 'grey',
-    fontWeight: '100',
+    fontWeight: '400',
     fontStyle: 'italic',
   },
   body: {
-    paddingVertical: 16,
+    paddingVertical: spacing * 2,
     fontSize: 13,
     marginBottom: - spacing,
   },
