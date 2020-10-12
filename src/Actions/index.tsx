@@ -21,8 +21,10 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
     showCancel,
     cancelButtonStyle,
     cancelButtonLabelStyle,
+    cancelButtonProps,
     confirmButtonStyle,
     confirmButtonLabelStyle,
+    confirmButtonProps,
     ButtonComponent,
     buttonProps
   } = useContext<CurrentConfirm>(ConfirmContext)
@@ -46,6 +48,7 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
           labelStyle={ cancelButtonLabelStyle }
           inverse
           {...buttonProps}
+          {...confirmButtonProps}
         >
           { cancelLabel }
         </ButtonComponent>
@@ -56,6 +59,7 @@ const Actions = ({ dismiss }: Props): JSX.Element => {
         style={ [styles.confirm, confirmButtonStyle] }
         labelStyle={ confirmButtonLabelStyle }
         {...buttonProps}
+        {...cancelButtonProps}
       >
         { confirmLabel }
       </ButtonComponent>

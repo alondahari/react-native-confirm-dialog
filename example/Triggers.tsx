@@ -70,7 +70,18 @@ const Triggers = ({setFeedback}: Props): JSX.Element => {
   const handleCustomButton = () => {
     confirm({
       ButtonComponent: MyButton,
-      onConfirm: handleConfirm(1000)
+      buttonProps: {
+        mode: 'outlined',
+      },
+      onConfirm: handleConfirm(1000),
+      cancelLabel: 'No',
+      confirmLabel: 'Yes',
+      confirmButtonLabelStyle: {
+        color: 'black',
+      },
+      cancelButtonStyle: {
+        borderWidth: 0,
+      }
     })
   }
 

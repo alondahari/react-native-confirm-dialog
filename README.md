@@ -70,11 +70,15 @@ options provided when calling `confirm` take precedence over options provided to
 | actions                 | Override the dialog buttons with a custom component | (dismiss: VoidFunction) => JSX.Element &#124; JSX.Element[] | `undefined`           |
 | body                    | Description of the confirmation                     | String                                                      | `undefined`           |
 | bodyStyle               | Style overrides for dialog body                     | TextStyle                                                   | `undefined`           |
+| ButtonComponent         | Override the component used for the buttons         | Function Component                                          | EnhancedButton            |
+| buttonProps             | custom props to pass to both buttons                | object                                                      | `undefined`           |
 | buttonLabelStyle        | Style overrides for both button labels              | TextStyle                                                   | `undefined`           |
 | buttonStyle             | Style overrides for both buttons                    | ViewStyle                                                   | `undefined`           |
 | cancelLabel             | Text of the secondary button                        | String                                                      | "Cancel"              |
+| cancelButtonProps       | custom props to pass to secondary button            | object                                                      | `undefined`           |
 | cancelButtonLabelStyle  | Style overrides for secondary button label          | TextStyle                                                   | `undefined`           |
 | cancelButtonStyle       | Style overrides for secondary button                | ViewStyle                                                   | `undefined`           |
+| confirmButtonProps      | custom props to pass to primary button              | object                                                      | `undefined`           |
 | confirmButtonLabelStyle | Style overrides for primary button label            | TextStyle                                                   | `undefined`           |
 | confirmButtonStyle      | Style overrides for primary button                  | ViewStyle                                                   | `undefined`           |
 | confirmLabel            | Text of the primary button                          | String                                                      | "OK"                  |

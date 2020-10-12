@@ -4,7 +4,7 @@ import { Button } from 'react-native-paper'
 
 const MyButton = ({ children, ...props }: EnhancedButtonProps): JSX.Element => {
   return (
-    <Button mode='text' {...props}>{children}</Button>
+    <Button {...props}>{children}</Button>
   )
 }
 
